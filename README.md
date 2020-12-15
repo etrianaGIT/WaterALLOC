@@ -1,2 +1,2 @@
-# WaterALLOCDocs.github.io
+# WaterALLOC
 WaterALLOC Modeling Management System Documentation
