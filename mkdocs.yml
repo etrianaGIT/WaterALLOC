@@ -1,0 +1,15 @@
+site_name: WaterALLOC User Manual
+theme: 
+markdown_extensions:
+    - toc:
+        baselevel: 1
+nav:
+    - Home: index.md
+    - Modules:
+            - Settings and Options: General.md
+            - HydroBID:
+                - Creating a Folder: HydroBID_Main.md
+            - MODSIM: Modules/MODSIM/MODSIMModule.md
+    - About: about.md
+
+
