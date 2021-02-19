@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>TimeseriesImport - WaterALLOC User Manual</title>
+        <title>SimplyfyingNetwork - WaterALLOC User Manual</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -87,187 +87,12 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="2"><a href="#time-series-import-tool" class="nav-link">Time Series Import Tool</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#example" class="nav-link">Example</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="time-series-import-tool">Time Series Import Tool</h2>
-<pre><code>MODSIM -&gt; Import MODSIM Timeseries
-</code></pre>
-<p>This tool allows importing multiple time series to MODSIM from a comma separated file (CSV file).  The file headers format allow flexibility in importing different time series types in different units to different MODSIM objects.</p>
-<h3 id="file-format">File Format</h3>
-<p>The csv file separate values with commas. The first row should include:
-* The first two columns contain the <em>Start Date</em> and the <em>End Date</em>, which correspond to the start date and end date of the MODSIM time step.<br />
-* Name of the MODSIM objects separated by commas. </p>
-<pre><code>    Start Date, End Date, Object Names ....
-
-</code></pre>
-
-<blockquote>
-<p>This first row is used to find the MODSIM objects, i.e., links or nodes. The name should match the name in the model. </p>
-</blockquote>
-<h4 id="optional-format-headings">OPTIONAL FORMAT (Headings)</h4>
-<ol>
-<li>The second row can contain the MODSIM variable names of the time series.  The allowed variable names are:</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Object</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>adaTargetsM</td>
-<td>Reservoir</td>
-<td>Storage target time series</td>
-</tr>
-<tr>
-<td>adaInflowsM</td>
-<td>Non-Storage</td>
-<td>Inflow time series</td>
-</tr>
-<tr>
-<td>adaEvaporationsM</td>
-<td>Reservoir</td>
-<td>Net evaporation rate time series (units of depth per time step)</td>
-</tr>
-<tr>
-<td>adaDemandsM</td>
-<td>Demand</td>
-<td>Water demand time series</td>
-</tr>
-<tr>
-<td>maxVariable</td>
-<td>Link</td>
-<td>Link capacity time series</td>
-</tr>
-<tr>
-<td>adaMeasured</td>
-<td>Link</td>
-<td>Measured flow time series</td>
-</tr>
-<tr>
-<td>adaForecastsM</td>
-<td>Reservoir</td>
-<td>Forecasted inflow to the reservoir</td>
-</tr>
-<tr>
-<td>adaGeneratingHrsM</td>
-<td>Reservoir</td>
-<td>Hydropower generating hours time series (units of hours)</td>
-</tr>
-<tr>
-<td>adaInfiltrationsM</td>
-<td>Demand</td>
-<td>fraction of the demand that infiltrates to the ground time series</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>These variables names are case sensitive.
-2. The third row contains the units of the time series. The units accepted by MODSIM are:</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Unit Type</th>
-<th>Options</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>volumeLabels</td>
-<td>acre-ft<br>  10³ acre-ft<br>  ft³<br>  10⁶gal<br>  1000 m³<br>  10⁶m³<br>  m³</td>
-</tr>
-<tr>
-<td>areaLabels</td>
-<td>acres<br>  10³ acres<br>  ft²<br>  1000 m²<br>  10⁶m²<br>  m²</td>
-</tr>
-<tr>
-<td>lengthLabels</td>
-<td>ft<br>  in<br>  m<br>  cm<br>  mm</td>
-</tr>
-<tr>
-<td>timeLabels</td>
-<td>seconds <br>minutes <br> hours <br> days <br> weeks <br> months <br> years</td>
-</tr>
-<tr>
-<td>energyLabels</td>
-<td>MWh<br>  kWh<br>  GWh<br>  BTU<br>  kJ<br>  MJ<br>  GJ</td>
-</tr>
-<tr>
-<td>volumeLabels_English</td>
-<td>acre-ft<br>  10³ acre-ft<br>  ft³<br>  10⁶gal</td>
-</tr>
-<tr>
-<td>area Labels_English</td>
-<td>acres<br>  10³ acres<br>  ft²</td>
-</tr>
-<tr>
-<td>length Labels_English</td>
-<td>ft<br>  in</td>
-</tr>
-<tr>
-<td>volume Labels_Metric</td>
-<td>1000 m³<br>  10⁶m³<br>  m³</td>
-</tr>
-<tr>
-<td>area Labels_Metric</td>
-<td>1000 m²<br>  10⁶m²<br>  m²</td>
-</tr>
-<tr>
-<td>length Labels_Metric</td>
-<td>m<br>  cm<br>  mm</td>
-</tr>
-<tr>
-<td><br></td>
-<td></td>
-</tr>
-<tr>
-<td>&gt;<strong>NOTE</strong> <br></td>
-<td></td>
-</tr>
-<tr>
-<td>&gt;* Dates should start at the data start date</td>
-<td></td>
-</tr>
-<tr>
-<td>&gt;* Missing values should be filled with 0 or -999 for missing measured values</td>
-<td></td>
-</tr>
-<tr>
-<td>Information the user should notice even if skimming.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="example">Example</h2>
-<p>The following csv imports different time series to different objects.  The objects have to already exist in the network.</p>
-<pre><code>
-Start Date,End Date,BARGI,Ret.Flow,BARGI,Left_Bank,Right_Bank,Power_Releases,Channel10_BargiRelease,LocalGains_Bargi
-,,adaTargetsM,adaInflowsM,adaEvaporationsM,adaDemandsM,adaDemandsM,maxVariable,maxVariable,adaMeasured
-,,1000 m³,1000 m³/10 days,mm/week,1000 m³/10 days,1000 m³/10 days,1000 m³/10 days,1000 m³/10 days,1000 m³/10 days
-1/1/2000 0:00,1/11/2000 0:00,2407437.2,53,13.101,10710,0,197001.3,0,95363.9
-1/11/2000 0:00,1/21/2000 0:00,2264751.3,45,16.875,10770,0,172497.2,0,47096.7
-1/21/2000 0:00,2/1/2000 0:00,2120169.6,59,34.85757576,10490,0,188551.5,0,61001
-2/1/2000 0:00,2/11/2000 0:00,2015278.7,60,19.21,10010,0,111172.5,0,21883.6
-2/11/2000 0:00,2/21/2000 0:00,1914685.3,65,18.269,18100,0,106669,0,29523.5
-2/21/2000 0:00,3/1/2000 0:00,1846549.2,94,31.67333333,8490,0,101058.5,0,46826.2
-</code></pre></div>
+</div>
             </div>
         </div>
 
