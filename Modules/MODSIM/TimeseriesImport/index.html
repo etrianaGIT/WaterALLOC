@@ -143,7 +143,7 @@
 <tr>
 <td>adaEvaporationsM</td>
 <td>Reservoir</td>
-<td>Net evaporation rate time series (units of depth per time step)</td>
+<td>Net evaporation rate time series (units of depth per time step).  <br> <em>This time series is a decimal type, so it is imported without the accuracy factor.</em></td>
 </tr>
 <tr>
 <td>adaDemandsM</td>
@@ -178,7 +178,7 @@
 </tbody>
 </table>
 <blockquote>
-<p>These variables names are case sensitive.
+<p>These variables names are case sensitive. They are imported into the model using the active accuracy factor in the MODSIM model, i.e., the values are multiplied by 10^accuracy for the interal time series.
 2. The third row contains the units of the time series. The units accepted by MODSIM are:</p>
 </blockquote>
 <table>
