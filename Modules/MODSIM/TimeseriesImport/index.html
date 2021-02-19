@@ -115,12 +115,13 @@
 </code></pre>
 
 <blockquote>
-<p>This first row is used to find the MODSIM objects, i.e., links or nodes. The name should match the name in the model. </p>
+<p>This first row is used to find the MODSIM objects, i.e., links or nodes. The name should match the name of the object in the model. 
+<br> <br> The date format is MM/dd/YYYY</p>
 </blockquote>
-<h4 id="optional-format-headings">OPTIONAL FORMAT (Headings)</h4>
-<ol>
-<li>The second row can contain the MODSIM variable names of the time series.  The allowed variable names are:</li>
-</ol>
+<p>The default time series for the different model object are:</p>
+<h4 id="additional-information">Additional Information</h4>
+<p>This additional information define the type of time series to be imported for the object and the units.
+1. The second row can contain the MODSIM variable names of the time series.  The allowed variable names are:</p>
 <table>
 <thead>
 <tr>
@@ -133,7 +134,7 @@
 <tr>
 <td>adaTargetsM</td>
 <td>Reservoir</td>
-<td>Storage target time series</td>
+<td>Storage target time series. This time series is imported using the <em>End Date</em>.</td>
 </tr>
 <tr>
 <td>adaInflowsM</td>
