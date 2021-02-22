@@ -3,6 +3,7 @@ theme:
 markdown_extensions:
     - toc:
         baselevel: 1
+    - pymdownx.tabbed
 nav:
     - Home: index.md
     - Modules:
