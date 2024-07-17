@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>TimeseriesImport - WaterALLOC User Manual</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">WaterALLOC User Manual</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modules</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../General/" class="dropdown-item">Settings and Options</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HydroBID</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../HydroBID_Main/" class="dropdown-item">Creating a Folder</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../MODSIMModule/" class="dropdown-item">MODSIM</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#time-series-import-tool" class="nav-link">Time Series Import Tool</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#example" class="nav-link">Example</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="time-series-import-tool">Time Series Import Tool</h2>
+<pre><code>MODSIM -&gt; Import MODSIM Timeseries
+</code></pre>
+<p>This tool allows importing multiple time series to MODSIM from a comma separated file (CSV file).  The file headers format allow flexibility in importing different time series types in different units to different MODSIM objects.</p>
+<h3 id="file-format">File Format</h3>
+<p>The csv file separate values with commas. The first row should include:
+* The first two columns contain the <em>Start Date</em> and the <em>End Date</em>, which corresponds to the start date and end date of period for which the data is provided.  The MODSIM time series use the start date as time stamp of the interval. The exception is the storage targets that corresponds to the end of the period.<br />
+* Name of the MODSIM objects separated by commas. </p>
+<pre><code>    Start Date, End Date, Object Names ....
+
+</code></pre>
+<blockquote>
+<p>This first row is used to find the MODSIM objects, i.e., links or nodes. The name should match the name of the object in the model. 
+<br> <br> The date format is MM/dd/YYYY</p>
+</blockquote>
+<p>The default time series for the different model object are:</p>
+<h4 id="additional-information">Additional Information</h4>
+<p>This additional information define the type of time series to be imported for the object and the units.
+1. The second row can contain the MODSIM variable names of the time series.  The allowed variable names are:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Object</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaTargetsM</td>
+<td>Reservoir</td>
+<td>Storage target time series. This time series is imported using the <em>End Date</em>.</td>
+</tr>
+<tr>
+<td>adaInflowsM</td>
+<td>Non-Storage</td>
+<td>Inflow time series</td>
+</tr>
+<tr>
+<td>adaEvaporationsM</td>
+<td>Reservoir</td>
+<td>Net evaporation rate time series (units of depth per time step).  <br> <em>This time series is a decimal type, so it is imported without the accuracy factor.</em></td>
+</tr>
+<tr>
+<td>adaDemandsM</td>
+<td>Demand</td>
+<td>Water demand time series</td>
+</tr>
+<tr>
+<td>maxVariable</td>
+<td>Link</td>
+<td>Link capacity time series</td>
+</tr>
+<tr>
+<td>adaMeasured</td>
+<td>Link</td>
+<td>Measured flow time series</td>
+</tr>
+<tr>
+<td>adaForecastsM</td>
+<td>Reservoir</td>
+<td>Forecasted inflow to the reservoir</td>
+</tr>
+<tr>
+<td>adaGeneratingHrsM</td>
+<td>Reservoir</td>
+<td>Hydropower generating hours time series (units of hours)</td>
+</tr>
+<tr>
+<td>adaInfiltrationsM</td>
+<td>Demand</td>
+<td>fraction of the demand that infiltrates to the ground time series</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>These variables names are case sensitive. They are imported into the model using the active accuracy factor in the MODSIM model, i.e., the values are multiplied by 10^accuracy for the interal time series.
+2. The third row contains the units of the time series. The units labels accepted by MODSIM are:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Unit Type</th>
+<th>Options English System</th>
+<th>Options Metric System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time</td>
+<td>seconds <br>minutes <br> hours <br> days <br> weeks <br> months <br> years</td>
+<td></td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>acre-ft<br>  10³ acre-ft<br>  ft³<br>  10⁶gal</td>
+<td>1000 m³<br>  10⁶m³<br>  m³</td>
+</tr>
+<tr>
+<td>Area</td>
+<td>acres<br>  10³ acres<br>  ft²</td>
+<td>1000 m²<br>  10⁶m²<br>  m²</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>ft<br>  in</td>
+<td>m<br>  cm<br>  mm</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>MWh<br>  kWh<br>  GWh<br>  BTU<br>  kJ<br>  MJ<br>  GJ</td>
+<td></td>
+</tr>
+<tr>
+<td><br></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;<strong>NOTE</strong> <br></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;* Dates should start at the data start date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;* Missing values should be filled with 0 or -999 for missing measured values</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Information the user should notice even if skimming.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;* The import process allows blanks and converts them to 0.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;* Measured flows should have a negative value when data is missing. Negatives values will be imported into the MODSIM time series.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>The following csv imports different time series to different objects.  The objects have to already exist in the network.</p>
+<pre><code>
+Start Date,End Date,BARGI,Ret.Flow,BARGI,Left_Bank,Right_Bank,Power_Releases,Channel10_BargiRelease,LocalGains_Bargi
+,,adaTargetsM,adaInflowsM,adaEvaporationsM,adaDemandsM,adaDemandsM,maxVariable,maxVariable,adaMeasured
+,,1000 m³,1000 m³/10 days,mm/week,1000 m³/10 days,1000 m³/10 days,1000 m³/10 days,1000 m³/10 days,1000 m³/10 days
+1/1/2000 0:00,1/11/2000 0:00,2407437.2,53,13.101,10710,0,197001.3,0,95363.9
+1/11/2000 0:00,1/21/2000 0:00,2264751.3,45,16.875,10770,0,172497.2,0,47096.7
+1/21/2000 0:00,2/1/2000 0:00,2120169.6,59,34.85757576,10490,0,188551.5,0,61001
+2/1/2000 0:00,2/11/2000 0:00,2015278.7,60,19.21,10010,0,111172.5,0,21883.6
+2/11/2000 0:00,2/21/2000 0:00,1914685.3,65,18.269,18100,0,106669,0,29523.5
+2/21/2000 0:00,3/1/2000 0:00,1846549.2,94,31.67333333,8490,0,101058.5,0,46826.2
+</code></pre>
+
+<p>The example csv can be opened/saved in MS-Excel the file organized in colums is as follows:</p>
+<p><img alt="Import file in Excel" src="../img/ImportCSVFile.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
