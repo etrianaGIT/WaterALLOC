@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Import Reservoirs from Shapefile - WaterALLOC User Connection</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">WaterALLOC User Connection</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../main/" class="nav-link">Main User Manual</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#import-reservoirs-from-shapefile" class="nav-link">Import Reservoirs from Shapefile</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#user-interface" class="nav-link">User Interface</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#algorithm" class="nav-link">Algorithm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="import-reservoirs-from-shapefile">Import Reservoirs from Shapefile</h1>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Requiremient</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shapefile</td>
+<td>Points with the general location of the reservoir</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Attributes</td>
+<td>- Name <br> - GUID <br> - Reservoir Capacity <br> - Power Capacity <br> - Max. Surface Area <br> - Max Depth <br></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-interface">User Interface</h2>
+<ol>
+<li>User will be prompted to browse to select the shapefile file </li>
+<li>
+<p>Import User Dialog </p>
+<p><img alt="Reservoir import user interface" src="../../../img/ImportRes.png" /></p>
+<p>The attribute mapping tree allows selecting the shapefile field to import into the different MODSIM attributes.
+3. Options</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attribute mapping</td>
+<td>Allows the user to select fields from the shapefile to assign attributes for the new nodes.</td>
+</tr>
+<tr>
+<td>Connections</td>
+<td>It finds non-storage nodes that don't have any links coming in and creates a source structure (Source and sink), connected with a link which names starts with "LocalGains_" + the name of the downstream gage + name of the node connecting to</td>
+</tr>
+<tr>
+<td>Source Node</td>
+<td>This option creates a non-storage nodes connected to the reservoirs nodes to simulate local inflows to the reservoir nodes.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="algorithm">Algorithm</h2>
+<p>For each point in the shapefile a new reservoir node is created with the information mapped in the shapefile.  In the case of the GUID, the MODSIM GUID will be replaced with the value specified in the shapefile. The nodes which name start with "Calib" are not considered, so that reservoirs are not attached to calibration structures. </p>
+<h3 id="connecting-the-reservoir-node">Connecting the Reservoir Node</h3>
+<p>There are three options:
+1. No connection
+    This option creates the reservoir node, but does not connect it to the network.<br />
+2. Closest Node</p>
+<pre><code>If the user select the option to connect the reservoir, the closest node is found based on the straight distance using the x and y coordinates. the reservoir accrual is connected from the closest node and the outflow link to the next downstream node. 
+Exceptions: 
+* If the bypass link is flagged with 'measured' time series
+* if there are no outflow links from the closest node
+
+    In these cases the outflow link is connected to the closest and the accrual is connected to the next upstream node.
+</code></pre>
+<ol>
+<li>
+<p>Defined Node</p>
+<p>This option requires the name of the node to be connected specified in a attribute field of the shapefile. The algorithm creates a single link between the reservoir and the speciifed node to connect the reservoir to the network. </p>
+</li>
+</ol>
+<h3 id="create-a-source">Create a Source</h3>
+<p>This option creates a non-storage node connected to the reservoir to simulate local inflow to the new reservoir node.  This construct creates a non-storage node with 0 inflow and a connected link that is open.  </p>
+<h4 id="internal-code-notes">Internal Code Notes</h4>
+<p>The source node is located on the same X coordinate than the reservoir node and will add 5 * coordFactor to the Y coordinate. The coordFactor is set to 100 internally.   </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
