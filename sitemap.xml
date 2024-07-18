@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>None</loc>
      <lastmod>2022-04-07</lastmod>
@@ -8,4 +9,7 @@
      <lastmod>2022-04-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
+=======
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+>>>>>>> eedf2e11931ce16308f189a3f598a69f5168a920
 </urlset>

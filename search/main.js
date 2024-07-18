@@ -21,8 +21,20 @@ function joinUrl (base, path) {
   return base + "/" + path;
 }
 
+<<<<<<< HEAD
 function formatResult (location, title, summary) {
   return '<article><h3><a href="' + joinUrl(base_url, location) + '">'+ title + '</a></h3><p>' + summary +'</p></article>';
+=======
+function escapeHtml (value) {
+  return value.replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function formatResult (location, title, summary) {
+  return '<article><h3><a href="' + joinUrl(base_url, location) + '">'+ escapeHtml(title) + '</a></h3><p>' + escapeHtml(summary) +'</p></article>';
+>>>>>>> eedf2e11931ce16308f189a3f598a69f5168a920
 }
 
 function displayResults (results) {
@@ -37,7 +49,15 @@ function displayResults (results) {
       search_results.insertAdjacentHTML('beforeend', html);
     }
   } else {
+<<<<<<< HEAD
     search_results.insertAdjacentHTML('beforeend', "<p>No results found</p>");
+=======
+    var noResultsText = search_results.getAttribute('data-no-results-text');
+    if (!noResultsText) {
+      noResultsText = "No results found";
+    }
+    search_results.insertAdjacentHTML('beforeend', '<p>' + noResultsText + '</p>');
+>>>>>>> eedf2e11931ce16308f189a3f598a69f5168a920
   }
 }
 
