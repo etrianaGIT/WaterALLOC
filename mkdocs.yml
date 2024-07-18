@@ -6,18 +6,21 @@ markdown_extensions:
     - pymdownx.tabbed
 nav:
     - Home: index.md
+    - Main: main.md
     - Modules:
-        - Settings and Options: General.md
-        - HydroBID:
-            - Creating a Folder: Modules/HydroBID/HydroBID_Main.md
-        - HydroRAM:
-            - Measured Flows: Modules/HydroRAM/MeasuredFlows.md
-        - MODSIM:
-            - Main: Modules/MODSIM/MODSIMModule.md
-            - Reservoir Shape Import: Modules/MODSIM/ResShapefImport.md
-            - Simplifying Network: Modules/MODSIM/SimplyfyingNetwork.md
-            - Time Series Import: Modules/MODSIM/TimeseriesImport.md
-    - WaterALLOC:
-        - Scenarios: WaterALLOC/Scenarios.md
+            - Settings and Options: General.md
+            - HydroBID:
+                - Creating a Folder: HydroBID_Main.md
+            - MODSIM: Modules/MODSIM/MODSIMModule.md
+            - HydroRAM:
+                - Measured Flows: Modules/HydroRAM/MeasuredFlows.md
+            - MODSIM:
+                - Main: Modules/MODSIM/MODSIMModule.md
+                - Reservoir Shape Import: Modules/MODSIM/ResShapefImport.md
+                - Simplifying Network: Modules/MODSIM/SimplyfyingNetwork.md
+                - Time Series Import: Modules/MODSIM/TimeseriesImport.md
+            - WaterALLOC:
+                - Scenarios: WaterALLOC/Scenarios.md        
     - About: about.md
+
 
