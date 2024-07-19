@@ -1293,7 +1293,7 @@ Preference** window, users can navigate to a specific MODSIM file (.xy)
 by clicking in the yellow folder icon.
 
 <img src=".\img/media/image73.png"
-style="width:6.5in;height:1.13958in" />
+style="width:4.04887in;height:0.70985in" />
 
 ### Setting MODSIM Elements
 
@@ -1313,7 +1313,7 @@ by clicking on the icon and then clicking on the desired location in the
 Map Window.
 
 <img src=".\img/media/image74.png"
-style="width:6.5in;height:0.47083in" />
+style="width:4.23472in;height:0.30675in" />
 
 #### Demands
 
@@ -2354,12 +2354,13 @@ Where:
 
 #### Hyperbolic Water Demand Curve
 
-An alternative simple form for the demand curve, which is implemented in
-the WaterALLOC economic module, is a hyperbolic demand equation. In the
-same way as described above, the benefits can be calculated as the area
-(integral) under the demand curve for water. In a case with hyperbolic
-demand, the **aggregate** water demand and corresponding marginal
-benefit are:
+<img src=".\img/media/image106.emf"
+style="width:6.5in;height:0.32292in" />An alternative simple form for
+the demand curve, which is implemented in the WaterALLOC economic
+module, is a hyperbolic demand equation. In the same way as described
+above, the benefits can be calculated as the area (integral) under the
+demand curve for water. In a case with hyperbolic demand, the
+**aggregate** water demand and corresponding marginal benefit are:
 
 <table>
 <colgroup>
@@ -2369,7 +2370,8 @@ benefit are:
 <thead>
 <tr>
 <th style="text-align: left;"><blockquote>
-<p><span class="math inline"></span>Demand Curve:</p>
+<p><img src=".\img/media/image107.emf"
+style="width:5.45833in;height:0.33333in" />Demand Curve:</p>
 </blockquote>
 <p>Inverse Demand (marginal benefit) curve:</p></th>
 <th><p>Eq. 14</p>
@@ -2410,7 +2412,8 @@ of the demand curve (i.e., Area B + Area C).[3]
 </colgroup>
 <thead>
 <tr>
-<th><span class="math inline"></span></th>
+<th><img src=".\img/media/image110.emf"
+style="width:6.5in;height:0.53125in" /></th>
 <th style="text-align: right;">Eq. 16</th>
 </tr>
 </thead>
