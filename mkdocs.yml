@@ -6,11 +6,11 @@ markdown_extensions:
     - pymdownx.tabbed
 nav:
     #- Home: index.md
-    - Main: main.md
+    - Home: main.md
     - Modules:
             - Settings and Options: General.md
             - HydroBID:
-                - Creating a Folder: Modules/Hydrobid/HydroBID_Main.md
+                - Creating a Folder: Modules/HydroBID/HydroBID_Main.md
             #- MODSIM: Modules/MODSIM/MODSIMModule.md
             - HydroRAM:
                 - Measured Flows: Modules/HydroRAM/MeasuredFlows.md
