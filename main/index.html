@@ -35,9 +35,6 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href=".." class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="./" class="nav-link active" aria-current="page">Main</a>
                             </li>
                             <li class="nav-item dropdown">
@@ -53,14 +50,10 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../HydroBID_Main/" class="dropdown-item">Creating a Folder</a>
+    <a href="../Modules/Hydrobid/HydroBID_Main.md" class="dropdown-item">Creating a Folder</a>
 </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="../Modules/MODSIM/MODSIMModule/" class="dropdown-item">MODSIM</a>
-</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">HydroRAM</a>
@@ -77,7 +70,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../Modules/MODSIM/MODSIMModule/" class="dropdown-item">MODSIM</a>
+    <a href="../Modules/MODSIM/MODSIMModule/" class="dropdown-item">Main</a>
 </li>
             
 <li>
@@ -117,7 +110,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" class="nav-link disabled">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -143,11 +136,6 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-bs-level="1"><a href="#table-of-contents" class="nav-link">Table of Contents</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             
             <li class="nav-item" data-bs-level="1"><a href="#introduction" class="nav-link">Introduction</a>
               <ul class="nav flex-column">
@@ -253,77 +241,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><img src=".\img/media/image1.jpeg" style="width:8.5in;height:3.59375in" /><img src=".\img/media/image2.png" style="width:2.64583in;height:1.5in" /><img src=".\img/media/image3.png" style="width:8.82292in;height:7.44792in" /></p>
 <p>WaterALLOC User Manual</p>
-<p>Prepared by:</p>
 <p>Enrique Triana</p>
 <p>Juliana Corrales</p>
-<p>July 2021</p>
 <p>Current Version 2.4.1.7</p>
-<h1 id="table-of-contents">Table of Contents</h1>
-<p>1 Table of Contents 2</p>
-<p>2 Introduction 4</p>
-<p>2.1 WaterALLOC Approach 5</p>
-<p>2.2 WaterALLOC Key Features 6</p>
-<p>3 WaterALLOC Development 7</p>
-<p>4 WaterALLOC Software Installation 9</p>
-<p>5 WaterALLOC Workspace 10</p>
-<p>6 HydroBID and MODSIM Modeling Tools 11</p>
-<p>6.1 HydroBID Overview 11</p>
-<p>6.1.1 AHD 11</p>
-<p>6.1.2 COMID 11</p>
-<p>6.1.3 AHD Flow Table 12</p>
-<p>6.1.4 Database 12</p>
-<p>6.1.5 Hydrologic Model 13</p>
-<p>6.1.6 Climate Data Interpolation Tool 14</p>
-<p>6.1.7 Outputs 14</p>
-<p>6.1.8 Calibration Parameters 15</p>
-<p>6.1.9 Settings File 17</p>
-<p>6.2 MODSIM Overview 17</p>
-<p>6.2.1 Network Flow Optimization 18</p>
-<p>6.2.2 Data-driven Model 18</p>
-<p>6.2.3 Long-term Planning to Real-time Operations 18</p>
-<p>6.2.4 Complex River Basin Configurations 18</p>
-<p>6.2.5 Reservoir Operations and Hydropower Generation 18</p>
-<p>6.2.6 Conjunctive Use 19</p>
-<p>6.2.7 Water Rights and Storage Contracts 19</p>
-<p>6.2.8 Customized MODSIM 19</p>
-<p>7 WaterALLOC Features and Functionalities 20</p>
-<p>7.1 WaterALLOC GUI 20</p>
-<p>7.1.1 Main Menu 21</p>
-<p>7.1.2 Toolbar Menu 21</p>
-<p>7.1.3 Project Settings Window 22</p>
-<p>7.1.4 Layer Explorer Panel 24</p>
-<p>7.2 HydroBID Tools 24</p>
-<p>7.2.1 Set up HydroBID Folder 24</p>
-<p>7.2.2 Set Inflow Points 25</p>
-<p>7.2.3 Precipitation and Temperature Processing 27</p>
-<p>7.2.4 AHD Navigation 28</p>
-<p>7.2.5 HydroBID Simulation 29</p>
-<p>7.2.6 Create MODSIM Network 30</p>
-<p>7.2.7 Import HydroBID Output 32</p>
-<p>7.3 MODSIM Tools 36</p>
-<p>7.3.1 Creating MODSIM Networks 36</p>
-<p>7.3.2 Setting MODSIM Elements 38</p>
-<p>7.3.3 MODSIM Network Settings 50</p>
-<p>7.3.4 Cost Analysis 51</p>
-<p>7.3.5 Run MODSIM 52</p>
-<p>7.3.6 MODSIM Priorities to Allocate Water 52</p>
-<p>7.4 Hydro-economics Tools 53</p>
-<p>7.4.1 Agricultural Sector 53</p>
-<p>7.4.2 Municipal Sector 57</p>
-<p>7.4.3 Hydropower Sector 62</p>
-<p>7.4.4 Cost-benefit Analysis 63</p>
-<p>7.5 GSFLOW Extension 64</p>
-<p>7.5.1 Accessing the Tool 65</p>
-<p>7.5.2 Expected Outcome 66</p>
-<p>7.6 Operation Optimization Module 68</p>
-<p>8 Scenarios Management 68</p>
-<p>9 Output Visualization 69</p>
-<p>1. References 69</p>
-<p>2. Help &amp; FAQ 69</p>
-<p>3. Contact US 69</p>
-<p>10 Project Database 70</p>
 <h1 id="introduction">Introduction</h1>
 <p>WaterALLOC is a modeling management system that provides a new geographic information system (GIS)-based interface that streamline the data processing between <strong>HydroBID</strong> and <strong>MODSIM</strong> models, offering a solution to perform water availability analysis, including river and reservoir operations with simulation of water permits and priorities, using all the river operations tools and customization provided by MODSIM. WaterALLOC was created to enhance the user experience for both, HydroBID and MODSIM users, allowing the HydroBID user to use the GIS interface to run the system and adding easy-to-use input dialogs for agricultural and municipal demands for MODSIM. Additionally, his tool creates the MODSIM simulation network automatically from the Analytical Hydrology Dataset (<strong>AHD</strong>) network built for HydroBID, using the catchments and streams to define the links and nodes of the MODSIM network.</p>
 <p><img src=".\img/media/image4.png" style="width:6.5in;height:3.57153in" />WaterALLOC links the results of local runoff from HydroBID to the entry nodes of MODSIM to simulate the routing of the flows in the streams of a basin. Georeferenced demand nodes can be created within the WaterALLOC interface to simulate water intake and consumption according to water availability at different points of the basin and in accordance with the permits, priorities, and physical and hydraulic limitations of the system. Also, WaterALLOC allows the creation and simulation of operation of reservoir systems, simulating water supply and power generation operations.</p>
@@ -1208,7 +1129,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>E</em><em>T</em><sub><em>c</em></sub> = <em>K</em><sub><em>c</em></sub> <em>E</em><em>T</em><sub>0</sub></span></th>
+<th><span class="math display"><em>E</em><em>T</em><sub><em>c</em></sub> = <em>K</em><sub><em>c</em></sub><em>E</em><em>T</em><sub>0</sub></span></th>
 <th style="text-align: right;">Eq. 1</th>
 </tr>
 </thead>
@@ -1228,7 +1149,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>E</em><em>T</em><em>o</em> = <em>p</em> (0.457<em>T</em><sub><em>m</em><em>e</em><em>a</em><em>n</em></sub> + 8.128)</span></th>
+<th><span class="math display"><em>E</em><em>T</em><em>o</em> = <em>p</em>(0.457<em>T</em><sub><em>m</em><em>e</em><em>a</em><em>n</em></sub> + 8.128)</span></th>
 <th style="text-align: right;">Eq. 2</th>
 </tr>
 </thead>
@@ -1249,7 +1170,7 @@
 <p><img src=".\img/media/image100.png" style="width:3.84591in;height:1.82215in" /></p>
 <h4 id="crop-annual-yield-function">Crop Annual Yield Function</h4>
 <p><strong><em>Y<sub>x\ </sub></em></strong>is the (maximum) annual crop yield (in ton/ha/year), when the crop water requirement is fully met over the growing season. This maximum yield is considered a local factor because it depends of multiple factors, including soils, practices, climate, and others, and it is usually obtained from historical production records. <strong><em>Y<sub>a</sub></em></strong> is the actual annual crop yield (in ton/ha/year), depending on the actual water applied and effective rainfall. Vaux and Pruitt (1983) define the relationship between the maximum yield and the actual yield as:</p>
-<p>$\left( 1 - \frac{Y_{a}}{Yx} \right) = K_{y}\left( 1 - \frac{{ET}_{a}}{ETx} \right)$ Eq. 3</p>
+<p>(1 − <em>Y</em><sub><em>a</em>/<em>Y</em><em>x</em></sub>) = <em>K</em><sub><em>y</em></sub>(1 − <em>E</em><em>T</em><sub><em>a</em>/<em>E</em><em>T</em><em>x</em></sub>) Eq. 3</p>
 <p>Where:</p>
 <blockquote>
 <p><strong><em>K<sub>y</sub></em></strong> is the crop yield response factor (unitless), representing the effect of a reduction in evapotranspiration on yield losses. The <em>K<sub>y</sub></em> concept and application guide can be found in <span class="mark">Steduto et al. (2012)</span></p>
@@ -1264,8 +1185,8 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display">$$\left( 1 - \frac{Y_{a}}{Yx} \right) = K_{y}\left( 1 - \frac{\sum_{i = 1}^{\ D}\left( \left( {Pp}_{i}*A \right) + S_{i} \right)}{\sum_{i = 1}^{D}{{{ET}_{x}}_{i}*A}} \right)$$</span></th>
-<th style="text-align: right;">Eq. 4</th>
+<th><span class="math display"></span></th>
+<th>Eq. 4</th>
 </tr>
 </thead>
 <tbody>
@@ -1281,7 +1202,7 @@
 </blockquote>
 <h4 id="economic-benefit">Economic Benefit</h4>
 <p>With the annual production <strong><em>Y<sub>a</sub></em></strong> (tons/ha/year) for each crop, the economic benefit (net benefit in monetary units) is calculated using the market crop price, the production costs, and the area irrigated for each crop.</p>
-<p><em>N</em><em>e</em><em>t</em> <em>B</em><em>e</em><em>n</em><em>e</em><em>f</em><em>i</em><em>t</em> = (<em>Y</em><sub><em>a</em></sub>(<em>P</em>) − (<em>C</em><sub><em>p</em></sub>))<em>A</em> Eq. 5</p>
+<p><em>N</em><em>e</em><em>t</em><em>B</em><em>e</em><em>n</em><em>e</em><em>f</em><em>i</em><em>t</em> = (<em>Y</em><sub><em>a</em></sub>(<em>P</em>) − (<em>C</em><sub><em>p</em></sub>))<em>A</em> Eq. 5</p>
 <p>Where:</p>
 <blockquote>
 <p><strong><em>P</em></strong> is the crop market price (in monetary units per ton).</p>
@@ -1304,9 +1225,9 @@
 </li>
 </ul>
 <p>These inputs are provided by demand nodes that represent a single or a collection of agricultural water demands.</p>
-<p><img src=".\img/media/image101.png" style="width:6.26651in;height:4.08394in" /></p>
+<p><img src=".\img/media/image102.png" style="width:6.26651in;height:4.08394in" /></p>
 <p>In addition, for each node, the user can include cost components for water projects that will affect the supply or demand for water in the agricultural sector. In particular, the user can specify: 1) the “capital cost,” representing the one-time costs incurred in the initial stage of a project and 2) O&amp;M costs representing the ongoing costs incurred annually for the life of the project. O&amp;M costs can be defined either as fixed annual monetary value or as a percentage of the capital costs.</p>
-<p><img src=".\img/media/image102.png" style="width:2.96535in;height:3.4622in" /></p>
+<p><img src=".\img/media/image103.png" style="width:2.96535in;height:3.4622in" /></p>
 <h3 id="municipal-sector">Municipal Sector</h3>
 <p>For public water supplies, the benefit from providing potable water to residences is represented using estimated economic demand curves for water, combined with cost estimates for alternative sources of water.</p>
 <p>Unlike the water “demand” terms previously used in this report to describe a fixed amount of water required by a user group, the <em>economic demand curve</em> for water is a functional relationship (<strong><em>D</em></strong>) representing the amount of water that a household <strong><em>k</em></strong> would be willing and able to purchase during a time period <em>t</em> (<strong><em>w<sub>kt</sub></em></strong>), depending on the unit price, <strong><em>P<sub>t</sub></em></strong> (e.g., $/m<sup>3</sup>), as follows:</p>
@@ -1317,7 +1238,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>w</em><sub><em>k</em><em>t</em></sub> = <em>D</em>(<em>P</em><sub><em>t</em></sub>, <em>x</em><sub><em>t</em><em>k</em></sub>)</span></th>
+<th><span class="math display"><em>w</em><sub><em>k</em></sub><em>t</em> = <em>D</em>(<em>P</em><sub><em>t</em></sub>, <em>x</em><sub><em>t</em></sub><em>k</em>)</span></th>
 <th style="text-align: right;">Eq. 6</th>
 </tr>
 </thead>
@@ -1340,7 +1261,7 @@
 <thead>
 <tr>
 <th><blockquote>
-<p><span class="math display"><em>b</em><sub><em>w</em><em>t</em><em>k</em></sub>(<em>w</em><sub><em>k</em><em>t</em></sub>) = ∫<sub></sub><sup></sup><em>P</em><sub><em>t</em></sub>(<em>w</em><sub><em>t</em><em>k</em></sub>,<em>x</em><sub><em>t</em><em>k</em></sub>)<em>d</em><em>w</em><sub><em>t</em><em>k</em></sub></span></p>
+<p><span class="math display"><em>b</em><sub><em>w</em><em>t</em><em>k</em></sub>(<em>w</em><sub><em>k</em><em>t</em></sub>) = ∫<sub></sub><sup></sup>〖<em>P</em><sub><em>t</em></sub>(<em>w</em><sub><em>t</em><em>k</em></sub>,〗<em>x</em><sub><em>t</em><em>k</em></sub>)<em>d</em><em>w</em><sub><em>t</em><em>k</em></sub></span></p>
 </blockquote></th>
 <th style="text-align: right;"><blockquote>
 <p>Eq. 7</p>
@@ -1368,7 +1289,7 @@
 <tr>
 <th><blockquote>
 <p><span class="math display"><em>w</em><sub><em>t</em></sub> = <em>a</em> + <em>b</em><em>P</em><sub><em>t</em></sub> + <em>c</em><em>x</em><sub><em>t</em></sub></span></p>
-<p><span class="math display">$$P_{t} = \frac{w_{t} - \left( a + cx_{t} \right)}{b}$$</span></p>
+<p><span class="math display"><em>P</em><sub><em>t</em></sub> = (<em>w</em><sub><em>t</em></sub> − (<em>a</em> + <em>c</em><em>x</em><sub><em>t</em></sub>))/<em>b</em></span></p>
 </blockquote></th>
 <th style="text-align: right;"><blockquote>
 <p>Eq. 8</p>
@@ -1381,7 +1302,7 @@
 </table>
 
 <p>where <strong><em>a</em></strong>, <strong><em>b</em></strong>, and <strong><em>c</em></strong> are preference parameters that could, for example, be estimated using regression analysis. In this linear case, the benefits to a household of gaining access to the public water supply system are represented in figure below:</p>
-<p><img src=".\img/media/image103.png" style="width:4.86458in;height:3.32292in" /></p>
+<p><img src=".\img/media/image104.png" style="width:4.86458in;height:3.32292in" /></p>
 <p>In situations where households lack or have insufficient access to a public water distribution system, it is assumed that the household can pay a price of <strong><em>p<sub>t,0</sub></em></strong> for water from alternative sources, such as private vendors (including the economic cost for fetching/buying/storing water). If water is only available at this price, then the demand curve implies that a household would consume <strong><em>w<sub>t,0</sub></em></strong> per period <strong><em>t</em></strong>.</p>
 <p>With access to the public water distribution system, if the price per unit of water through the public system is <strong><em>P<sub>t,1</sub></em></strong><sub>,</sub> then the household’s water demand during period <strong><em>t</em></strong> would be <strong><em>w<sub>t,1</sub></em></strong>. The amount of water available to the household from the public system (<strong><em>w<sub>t,2</sub></em></strong>) could be less, equal, or greater than <strong><em>w<sub>t,1</sub></em></strong>, and the benefits will be calculated as a function of the water available as follows:</p>
 <ul>
@@ -1394,7 +1315,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>b</em><sub><em>t</em></sub> = <em>w</em><sub><em>t</em>, 2</sub> * <em>P</em><sub><em>t</em>, 0</sub></span></th>
+<th><span class="math display"><em>b</em><sub><em>t</em></sub> = <em>w</em><sub>(<em>t</em>, 2)</sub> * <em>P</em><sub>(<em>t</em>, 0)</sub></span></th>
 <th style="text-align: right;">Eq. 10</th>
 </tr>
 </thead>
@@ -1412,7 +1333,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display">$$b_{t} = \left( w_{t,0}*P_{t,0} \right) + \left\lbrack \left( P_{t,0} - \left( \frac{w_{t,2} - \left( a + cx_{t} \right)}{b} \right) \right)*\left( \frac{w_{t,2} - w_{t,0}}{2} \right) \right\rbrack + \left\lbrack \left( w_{t,2} - w_{t,0} \right)*\left( \frac{w_{t,2} - \left( a + cx_{t} \right)}{b} \right) \right\rbrack$$</span></th>
+<th><span class="math display"><em>b</em><sub><em>t</em></sub> = (<em>w</em><sub>(<em>t</em>, 0)</sub> * <em>P</em><sub>(<em>t</em>, 0)</sub>) + [(<em>P</em><sub>(<em>t</em>, 0)</sub> − ((<em>w</em><sub>(<em>t</em>, 2)</sub> − (<em>a</em> + <em>c</em><em>x</em><sub><em>t</em></sub>))/<em>b</em>)) * ((<em>w</em><sub>(<em>t</em>, 2)</sub> − <em>w</em><sub>(<em>t</em>, 0)</sub>)/2)] + [(<em>w</em><sub>(<em>t</em>, 2)</sub> − <em>w</em><sub>(<em>t</em>, 0)</sub>) * ((<em>w</em><sub>(<em>t</em>, 2)</sub> − (<em>a</em> + <em>c</em><em>x</em><sub><em>t</em></sub>))/<em>b</em>)]</span></th>
 <th>Eq. 11</th>
 </tr>
 </thead>
@@ -1430,7 +1351,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display">$$b_{t} = \left( w_{t,0}*P_{t,0} \right) + \left\lbrack \left( P_{t,0} - P_{t,1} \right)*\left( \frac{w_{t,1} - w_{t,0}}{2} \right) \right\rbrack + \left\lbrack \left( w_{t,1} - w_{t,0} \right)*\left( P_{t,1} \right) \right\rbrack$$</span></th>
+<th><span class="math display"><em>b</em><sub><em>t</em></sub> = (<em>w</em><sub>(<em>t</em>, 0)</sub> * <em>P</em><sub>(<em>t</em>, 0)</sub>) + [(<em>P</em><sub>(<em>t</em>, 0)</sub> − <em>P</em><sub>(<em>t</em>, 1)</sub>) * ((<em>w</em><sub>(<em>t</em>, 1)</sub> − <em>w</em><sub>(<em>t</em>, 0)</sub>)/2)] + [(<em>w</em><sub>(<em>t</em>, 1)</sub> − <em>w</em><sub>(<em>t</em>, 0)</sub>) * (<em>P</em><sub>(<em>t</em>, 1)</sub>)]</span></th>
 <th>Eq. 12</th>
 </tr>
 </thead>
@@ -1444,12 +1365,12 @@
 <p>The <strong><em>aggregate</em> net</strong> benefit of water supplies can therefore be estimated by summing household-level net benefits across all affected households. It can be represented as:</p>
 <table>
 <colgroup>
-<col style="width: 88%" />
-<col style="width: 11%" />
+<col style="width: 90%" />
+<col style="width: 9%" />
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display">$${NB}_{wt} = \sum_{k = 0}^{K}{{nb}_{w_{t_{k}}}\left( {w_{t_{k}}}_{} \right)}$$</span></th>
+<th><span class="math display"></span></th>
 <th style="text-align: right;">Eq. 13</th>
 </tr>
 </thead>
@@ -1469,10 +1390,10 @@
 <thead>
 <tr>
 <th style="text-align: left;"><blockquote>
-<p>Demand Curve: <span class="math inline"><em>W</em><sub><em>t</em></sub> = <em>α</em><em>P</em><sub><em>t</em></sub><sup><em>β</em></sup></span></p>
+<p><span class="math inline"></span>Demand Curve:</p>
 </blockquote>
-<p>Inverse Demand (marginal benefit) curve: <span class="math inline">$P_{t} = \left( \frac{W_{t}}{\alpha} \right)^{1/\beta}$</span></p></th>
-<th style="text-align: right;"><p>Eq. 14</p>
+<p>Inverse Demand (marginal benefit) curve:</p></th>
+<th><p>Eq. 14</p>
 <p>Eq. 15</p></th>
 </tr>
 </thead>
@@ -1487,7 +1408,7 @@
 <p><strong><em>α</em></strong> and <strong><em>β</em></strong> are coefficients of the aggregate demand function, and <strong><em>β</em></strong> represents the price elasticity of water demand.[2]</p>
 </blockquote>
 <p>The figure below shows the hyperbolic demand curve with the areas to calculate the benefits for the different supply scenarios (above).</p>
-<p><img src=".\img/media/image104.png" style="width:5.58333in;height:3.86458in" /></p>
+<p><img src=".\img/media/image108.png" style="width:5.58333in;height:3.86458in" /></p>
 <p>In this case, if, for example, the amount of public water available to households is increased from <strong>W<sub>t,0</sub></strong> to<strong><em>W<sub>t,</sub></em><sub>2</sub></strong><sub>,</sub> the <strong>aggregate</strong> benefit, <em><strong>B<sub>t</sub></strong><sub>,\ </sub></em>is calculated as the integral of the demand curve (i.e., Area B + Area C).[3]</p>
 <table>
 <colgroup>
@@ -1496,7 +1417,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display">$$B_{t} = Area\ B + Area\ C = \ \left. \ \left\lbrack \left( \frac{1}{\alpha} \right)^{1/\beta}*\left( \frac{1}{1 + 1/\beta} \right)W_{i}^{1 + 1/\beta} \right\rbrack\  \right|_{W_{t,0}}^{W_{t,2}}$$</span></th>
+<th><span class="math inline"></span></th>
 <th style="text-align: right;">Eq. 16</th>
 </tr>
 </thead>
@@ -1512,7 +1433,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>N</em><em>B</em><sub><em>t</em></sub> = <em>B</em><sub><em>t</em></sub> − (<strong>c</strong> * [<em>W</em><sub><em>t</em>2</sub> − <em>W</em><sub><em>t</em>0</sub>])</span></th>
+<th><span class="math display"><em>N</em><em>B</em><sub><em>t</em></sub> = <em>B</em><sub><em>t</em></sub> − (<strong>c</strong> * 〖[<em>W</em>〗<sub><em>t</em>2</sub> − <em>W</em><sub><em>t</em>0</sub>])</span></th>
 <th style="text-align: right;">Eq. 17</th>
 </tr>
 </thead>
@@ -1534,7 +1455,7 @@
 </li>
 </ul>
 <p>In addition, for each node, the user can include cost components for water projects that will affect the supply or demand for water in the municipal sector. As with agricultural projects, the user can specify 1) the “capital cost,” representing the one-time costs incurred in the initial stage of a project, and 2) O&amp;M costs representing the ongoing costs incurred annually for the life of the project. O&amp;M costs can be defined either as fixed annual monetary value or as a percentage of the capital costs.</p>
-<p><img src=".\img/media/image105.png" style="width:6.5in;height:3.82639in" /></p>
+<p><img src=".\img/media/image111.png" style="width:6.5in;height:3.82639in" /></p>
 <h3 id="hydropower-sector">Hydropower Sector</h3>
 <p>For hydropower projects, the net benefits in each time step is a function of the electricity generated minus the O&amp;M costs. The amount of electric power generated (<strong><em>Pw<sub>t</sub></em></strong>) in period <strong><em>t</em></strong> in watts, is calculated as follows:</p>
 <table>
@@ -1567,7 +1488,7 @@
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>B</em><sub><em>h</em><em>t</em></sub>= <em>P</em><sub><em>t</em></sub> * <em>E</em><sub><em>t</em></sub></span></th>
+<th><span class="math display"><em>B</em><sub><em>h</em></sub><em>t</em> = <em>P</em><sub><em>t</em></sub> * <em>E</em><sub><em>t</em></sub></span></th>
 <th style="text-align: right;">Eq. 19</th>
 </tr>
 </thead>
@@ -1586,7 +1507,7 @@
 <p>In addition, the results for each node include the option for a time series of project costs on an annual basis. The capital costs are assumed to occur at the beginning of the simulation period and the O&amp;M costs occur each year thereafter for the lifespan of the project, which is assumed to be longer than the simulation period.</p>
 <p>To support cost–benefit analysis, the model allows the user to compare the project costs and net benefits with the associated water allocation in three different ways: 1) as present values, discounting the future values in the time series with a user-specified discount rate, 2) as annualized values, and 3) as the total simulated, as the sum of the annual values simulated for each node. A benefit-cost ratio and the net benefit-cost present value are used to compare the assumed benefits and costs, with ratio values greater than one indicating larger benefits than costs.</p>
 <p>RTI built a dashboard in WaterALLOC to summarize the benefits and cost results per node and water use type and compare the economic analysis results between multiple scenarios. The figure below shows the dashboard with the main analysis areas and user options. The results displayed in the dashboard include the benefits and cost for the base scenario and each scenario selected, which is displayed in the summary type selected, and a table with the incremental economic benefit between the base scenario and the selected scenarios. The dashboard also includes a graph of each demand node cost–benefit per scenario. The cost–benefit ratio (i.e., BC Ratio) is calculated for each row in the tables, when data are available and adequate for the calculation.</p>
-<p><img src=".\img/media/image106.png" style="width:6.39797in;height:4.63542in" /></p>
+<p><img src=".\img/media/image112.png" style="width:6.39797in;height:4.63542in" /></p>
 <h2 id="gsflow-extension">GSFLOW Extension</h2>
 <p>This extension contains tools to create the MODSIM network for GSFLOW-MODSIM coupled simulation. The main function of these tools is to create a MODSIM network based on the GSFLOW-SFR network. It relies on a shapefile that is created by the Python data processing scripts. The shapefile includes attributes that contain information of the connectivity used by the SFR to move water and is required to link the SFR reaches with the MODSIM links.</p>
 <p>The SFR network can contain diversion segments and lakes. Diversion segment could have multiple segments representing different uses or diversion conditions. Flags for storage and non-agricultural use could be set for each of the diversion segments in the shapefile attributes and transferred to the MODSIM links. The SFR shapefile fields include:</p>
@@ -1635,10 +1556,10 @@
 
 <h3 id="accessing-the-tool">Accessing the Tool</h3>
 <p>The tool is available in the GSFLOW menu item, when the GSFLOW extension is enabled. The Generate Network item launches the user interface to create the MODSIM network from the SFR shapefile.</p>
-<p><img src=".\img/media/image107.png" style="width:6.15711in;height:0.78136in" /></p>
+<p><img src=".\img/media/image113.png" style="width:6.15711in;height:0.78136in" /></p>
 <p>The SFR shapefile should be selected in the configuration setting as the scenario Flowline Layer</p>
 <p>The user dialog to map the SFR fields to the information required for generating the MODSIM network provides the names of the key information and the corresponding field in the shapefile (Flowline Layer).</p>
-<p><img src=".\img/media/image109.png" style="width:4.44854in;height:4.32352in" /></p>
+<p><img src=".\img/media/image115.png" style="width:4.44854in;height:4.32352in" /></p>
 <p>The field names can be edited, selecting the field that would like to be edited, and changing the field name in the dropdown box that shows the available fields.</p>
 <h3 id="expected-outcome">Expected Outcome</h3>
 <p>The process creates a new MODSIM network for the active scenario. All the nodes and links in the MODSIM network will be deleted and new links and nodes will be created from the SFR shapefile. The SFR segments in the shapefile are used to create MODSIM links.</p>
@@ -1646,9 +1567,9 @@
 <p>Since water is diverted from the bottom of the SFR segment, the processing of diversions, creates new nodes at the last part (i.e., last part of the line) of the shapefile line to implement the diversion link, assuring that only water in the segment is available for diversion in MODSIM. The diversion node is named “###_DWS”, using the number of the segment for which the downstream node was created.</p>
 <p>Each diversion is created with at least one non-storage node to represent the diversion from the source, i.e., Diversion Inflow Node, that is located at the end of the shapefile line used for the diversion segment.</p>
 <p><strong><em>Demand ID defined</em></strong>: A diversion inflow node and a demand node are created for each <em>Demand ID</em> at the diversion location. The segments associated with that demand are created between the diversion inflow node and the corresponding demand, forming multi-links if multiple segments are associated with the <em>Demand ID</em>. The diversion inflow node is named with “<em>Diversion ID</em><em>Diversion</em><em><em>” and the demand is given the </em>Demand ID</em> name.</p>
-<p><img src=".\img/media/image112.png" style="width:4.43849in;height:3.44403in" /></p>
+<p><img src=".\img/media/image118.png" style="width:4.43849in;height:3.44403in" /></p>
 <p><strong><em>Demand ID not defined</em></strong>: a single demand with the name of the IUPSEG is created in this case. All the diversion segments at the current diversion location are implemented between the diversion Inflow node and the demand – a multi-link construct. The name of the demand name is “<strong><em>DEM_</em><em>IUPSEG#</em>”, and the name of the diversion inflow node is “</strong><em>DEM_</em><em>IUPSEG#</em><em>Diversion</em>**“.</p>
-<p><img src=".\img/media/image113.png" style="width:4.13341in;height:3.40863in" /></p>
+<p><img src=".\img/media/image119.png" style="width:4.13341in;height:3.40863in" /></p>
 <h4 id="reservoirs-lakes">Reservoirs (Lakes)</h4>
 <p>The python processed shapefile includes connectivity through out the lakes for creating the MODSIM network. In general, negative numbers on the OUTSEG indicates the segment is draining to a lake and the number is associated with the lake number. WaterALLOC creates reservoirs at these locations using the shapefile lines to connect the incoming segments to the MODSIM node and the outgoing segments with the segments downstream of the reservoir.</p>
 <h2 id="operation-optimization-module">Operation Optimization Module</h2>
@@ -1739,13 +1660,13 @@
 <p>[3] In the unique case where <strong><em>β</em></strong> equals -1, this equation is undefined, but the benefit calculation simplifies to</p>
 <table>
 <colgroup>
-<col style="width: 77%" />
-<col style="width: 22%" />
+<col style="width: 92%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr>
-<th><span class="math display"><em>B</em><sub><em>t</em></sub> =  [<em>α</em> * <em>l</em><em>n</em>(<em>w</em><sub><em>t</em></sub>)] |<sub><em>w</em><sub><em>t</em>, 0</sub></sub><sup><em>w</em><sub><em>t</em>, 2</sub></sup></span></th>
-<th style="text-align: right;">Eq. 15-1</th>
+<th><img src=".\img/media/image109.png" style="width:5.88468in;height:0.41626in" /></th>
+<th style="text-align: right;"></th>
 </tr>
 </thead>
 <tbody>
